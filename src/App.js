@@ -32,7 +32,7 @@ const App = () => {
      */
     setPosts(posts.map(post => {
       if (post.id === postId) {
-        return setPosts(...post, `likes: ${post.likes +1}`)
+        return { ...post, likes: post.likes + 1 }
       } else {
         return post
       }
@@ -44,7 +44,7 @@ const App = () => {
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
-      <Posts likePosts={likePost} posts={posts}/>
+      <Posts likePost={likePost} posts={posts}/>
       {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
